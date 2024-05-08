@@ -36,8 +36,12 @@ namespace Automation.Framework.Core.WebUI.Selenium.LocalWebDrivers
             ChromeOptions options = new ChromeOptions();
             options.AcceptInsecureCertificates = true;
 
+          
+       //     options.AddExtensions(@"EXTENSION PATH");
+
+
             options.AddExcludedArgument("enable-automation");
-            options.AddArgument("disable-extensions");
+         //   options.AddArgument("disable-extensions");
             options.AddArgument("disable-infobars");
             options.AddArgument("disable-notifications");
             options.AddArgument("disable-web-security");

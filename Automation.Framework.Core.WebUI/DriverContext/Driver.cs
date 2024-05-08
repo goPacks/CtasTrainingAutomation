@@ -201,9 +201,6 @@ namespace Automation.Framework.Core.WebUI.DriverContext
             return new Actions(GetWebDriver());
         }
 
-        //public WebElement GetWebElement()
-        //{
-
-        //}
+     
     }
 }
