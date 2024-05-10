@@ -1,6 +1,7 @@
 ﻿using Automation.DemoUI.Pages;
 using Automation.DemoUI.WebAbstraction.Core;
 using TechTalk.SpecFlow;
+using static MongoDB.Bson.Serialization.Serializers.SerializerHelper;
 
 namespace Automation.DemoUI.Steps.Core
 {
@@ -40,6 +41,12 @@ namespace Automation.DemoUI.Steps.Core
         {
             _iPage.SelfServiceBillingCodeCreation(number);
 
+        }
+
+        [When(@"I will check on Balance Transfer Request success")]
+        public void WhenIWillCheckOnBalanceTransferRequestSuccess()
+        {
+            _iPage.BalanceTransferRequestSuccess();
         }
 
 

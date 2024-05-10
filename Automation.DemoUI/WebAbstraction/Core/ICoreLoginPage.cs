@@ -16,6 +16,8 @@ namespace Automation.DemoUI.WebAbstraction.Core
 
         void ClickLogin();
 
+        void CloseAllTabs();
+
 
     }
 }

@@ -73,11 +73,15 @@ namespace Automation.Framework.Core.WebUI.DriverContext
         public void NavigateTo(string url)
         {
             GetWebDriver().Navigate().GoToUrl(url);
+            
+            //GetWebDriver().Manage().Cookies.DeleteAllCookies();
         }
         public string GetPageTitle()
         {
             return GetWebDriver().Title;
         }
+
+
 
         public bool IsAlertPresent()
         {
@@ -148,6 +152,32 @@ namespace Automation.Framework.Core.WebUI.DriverContext
                     break;
                 }
             }
+        }
+
+        public void CloseAllTabs()
+        {
+            IList<string> windowhandles = GetWebDriver().WindowHandles;
+
+            for (int i = windowhandles.Count-1; i >= 0; i--)
+            {
+                if (i == 0)
+                {
+                    SwitchToWindowWithHandle(windowhandles[i]);
+
+                }
+                else
+                {
+                    SwitchToWindowWithHandle(windowhandles[i]);
+                    GetWebDriver().Close();
+                }
+
+                
+            }
+            
+          
+          
+
+
         }
 
 

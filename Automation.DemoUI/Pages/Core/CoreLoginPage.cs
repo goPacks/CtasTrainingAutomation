@@ -41,10 +41,20 @@ namespace Automation.DemoUI.Pages.Core
             _idriver.NavigateTo(URL);
         }
 
+        public void CloseAllTabs()
+        {
+            _idriver.CloseAllTabs();
+        }
+
+
         public void EnterCredentials(string username, string passWord)
         {
-            UserName.SendKeys(username);
-            Password.SendKeys(passWord);
+
+            if (_idriver.GetPageTitle() == "DJP Connect | Login")
+            {
+                UserName.SendKeys(username);
+                Password.SendKeys(passWord);
+            }
         }
 
         public void CheckPageTitle(string pageTitle)
@@ -54,7 +64,11 @@ namespace Automation.DemoUI.Pages.Core
 
         public void ClickLogin()
         {
-            SubmitBtn.ClickWithJs();
+
+            if (_idriver.GetPageTitle() == "DJP Connect | Login")
+            {
+                SubmitBtn.ClickWithJs();
+            }
         }
 
 

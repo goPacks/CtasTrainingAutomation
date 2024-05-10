@@ -51,10 +51,13 @@ namespace Automation.DemoUI.Pages.Core
         //driver.FindElement(By.CssSelector(".ng-star-inserted:nth-child(3) > .p-element .p-dropdown-label")).Click();
 
         IAtWebElement DestinationCombo => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".p-element:nth-child(1) > .p-ripple"));
-       IAtWebElement DestinationComboPickold => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".ng-star-inserted:nth-child(3) > .p-element .p-dropdown-label"));
+       IAtWebElement DestinationComboPickOld => _idriver.FindElement(GetBy(LocatorType.Xpath, "//span[@id='pr_id_78_label']"));
 
        
         IAtWebElement DestinationComboPick => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".ng-star-inserted:nth-child(3) > .p-element .p-dropdown-label"));
+
+
+        IAtWebElement x1 => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".p-element:nth-child(1) > .p-ripple"));
 
 
 
@@ -75,35 +78,13 @@ namespace Automation.DemoUI.Pages.Core
 
         IAtWebElement TaxPaymentCodeComboPick => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".ng-star-inserted:nth-child(1) > .p-element"));
 
-        // b
-
-        //span[contains(text(),'Self Service')]
-
-        IAtWebElement ccc => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".ng-star-inserted:nth-child(8) .p-dropdown-label"));
-
-        IAtWebElement ddd => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".p-element:nth-child(3) .mb-0"));
-
-        IAtWebElement eee => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".ng-untouched > .col-sm-12 > .p-dropdown-trigger"));
-
-        // c
-
-        IAtWebElement fff => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".p-element:nth-child(133) > .p-ripple"));
-
+        
         IAtWebElement Amount => _idriver.FindElement(GetBy(LocatorType.Id, "Amount0"));
 
 
-
-        IAtWebElement hhh => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".d-flex:nth-child(9)"));
-
-        IAtWebElement iii => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".d-flex:nth-child(10) > .pr-2 > .btn"));
-
-
-        IAtWebElement jjj => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".ml-auto > .btn"));
-
-
-        IAtWebElement kkk => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".ng-tns-c81-141 > .p-inputtext"));
-
         IAtWebElement ValidateRequestButton => _idriver.FindElement(GetBy(LocatorType.Xpath, "//button[text()='Validate Request']"));
+
+
 
 
         IAtWebElement taxLiability => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".ng-star-inserted:nth-child(6) .p-dropdown-trigger-icon"));
@@ -149,14 +130,30 @@ namespace Automation.DemoUI.Pages.Core
 
         IAtWebElement AmountInput => _idriver.FindElement(GetBy(LocatorType.Id, "AmountInput"));
 
-        IAtWebElement a5 => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".form-group:nth-child(13) > .col-sm-9"));
+       IAtWebElement a5 => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".form-group:nth-child(13) > .col-sm-9"));
 
-        IAtWebElement a6 => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".btn-primary"));
-
-
+       IAtWebElement a6 => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".btn-primary"));
 
 
-        
+       // IAtWebElement sortAsc => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".p-element:nth-child(8) .p-sortable-column-icon"));
+
+       //IAtWebElement sortDesc => _idriver.FindElement(GetBy(LocatorType.CssSelector, ".pi-sort-amount-up-alt"));
+
+        //// 10 | click | css=.p-element:nth-child(8) .p-sortable-column-icon | 
+        //driver.FindElement(By.CssSelector(".p-element:nth-child(8) .p-sortable-column-icon")).Click();
+        //// 11 | click | css=.pi-sort-amount-up-alt | 
+        //driver.FindElement(By.CssSelector(".pi-sort-amount-up-alt")).Click();
+
+        //thead/tr[1]/th[8]/p-sorticon[1]/i[1]
+
+        IAtWebElement sort => _idriver.FindElement(GetBy(LocatorType.Xpath, "//thead/tr[1]/th[8]/p-sorticon[1]/i[1]"));
+
+        IAtWebElement transferValue  => _idriver.FindElement(GetBy(LocatorType.Xpath, "//tbody/tr[1]/td[5]"));
+
+
+        //tbody/tr[1]/td[5]
+
+        //thead/tr[1]/th[8]/p-sorticon[1]/i[1]
 
         public CorePaymentPage(IObjectContainer iobjectContainer, IAtConfiguration iatConfiguration, IDriver idriver)
          : base(iobjectContainer)
@@ -183,7 +180,7 @@ namespace Automation.DemoUI.Pages.Core
             }
         }
 
-        public void EnterRequestNumberold(string requestNumber)
+        public void EnterRequestNumber(string requestNumber)
         {
             RequestNumber.SendKeys(requestNumber);
 
@@ -206,47 +203,45 @@ namespace Automation.DemoUI.Pages.Core
             Thread.Sleep(2000);
 
             SearchPaymentRecords.Click();
+
+            Thread.Sleep(3000);
+
             PickPaymentRecord.Click();
 
 
 
             PlaceHolder.Click();
 
-            // DestinationCombo.Click();
+           // DestinationCombo.Click();
 
 
            // _idriver.ScrollIntoView(DestinationCombo);
 
 
-            DestinationCombo.MoveToElement();
+          //DestinationCombo.MoveToElement();
 
-         //   DestinationCombo.Click();
 
-            return;
-            Thread.Sleep(3000);
 
-            DestinationComboPick.Click();
 
-         //   DestinationComboPick.Click();
-            
-            Thread.Sleep(5000);
+
+          DestinationCombo.Click();
+
+         DestinationComboPick.Click();
+
+            x1.Click();
+
+            Thread.Sleep(2000);
 
             taxLiability.Click();
 
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
 
             taxLiabilityPick.Click();
 
 
-            PlaceHolder.Click();
+            //laceHolder.Click();
 
-            //DestinationCombo.Click();
-            //DestinationComboPick.Click();
-
-            //Thread.Sleep(2000);
-
-            //taxLiability.Click();
-            //taxLiabilityPick.Click();
+          
 
             taxPaymentCode.Click();
             taxPaymentCodePick.Click();
@@ -276,10 +271,52 @@ namespace Automation.DemoUI.Pages.Core
             _idriver.GetNewTab();
 
             _idriver.NavigateTo("https://ctas-mtra.intranet.pajak.go.id/home/en-US/");
+
+
+
+            //-----------------------------------------------------------------------------------------
+           // a5.Click();
+
+          //  a6.Click();
+
+            //sortAsc.Click();
+
+            //sortDesc.Click();
+
+
+
+
         }
 
 
-        public void EnterRequestNumber(string requestNumber)
+
+        public void BalanceTransferRequestSuccess()
+        {
+            Thread.Sleep(5000);
+
+            sort.Click();
+
+            Thread.Sleep(5000);
+
+            sort.Click();
+
+
+            string amt = "0";
+                
+            amt =    transferValue.GetAttribute("value");  
+
+            Console.WriteLine(amt);
+
+         
+
+            Assert.That(amt, Is.EqualTo("999"));
+
+            //sortAsc.Click();
+
+            //sortDesc.Click();
+        }
+
+        public void EnterRequestNumberolder(string requestNumber)
         {
             RequestNumber.SendKeys(requestNumber);
 
@@ -306,11 +343,12 @@ namespace Automation.DemoUI.Pages.Core
             PlaceHolder.Click();
 
             DestinationCombo.Click();
-            DestinationComboPick.Click();
 
-            DestinationComboPick.SendKeys(Keys.Down);
+            Thread.Sleep(2000);
 
-            DestinationComboPick.SendKeys(Keys.Tab);
+            //   DestinationComboPick.Click();
+
+            return;
 
             Thread.Sleep(2000);
 
@@ -351,7 +389,7 @@ namespace Automation.DemoUI.Pages.Core
 
         }
 
-
+        
 
         public void SelfServiceBillingCodeCreation(string objectPermitNumber)
         {
@@ -385,11 +423,11 @@ namespace Automation.DemoUI.Pages.Core
 
             Thread.Sleep(1000);
 
-            a5.Click();
+           a5.Click();
 
             Thread.Sleep(1000);
 
-            a6.Click();
+           a6.Click();
 
             _idriver.GetNewTab();
 

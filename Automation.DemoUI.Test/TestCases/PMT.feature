@@ -17,7 +17,6 @@ Scenario: Automatic Balance Transfer from Tax Arrears
 @PaymentCore
 Scenario: Balance Transfer Request
 	Given I navigate to CtasCore at @"https://ctas-mtra.intranet.pajak.go.id/home/en-US/"
-	When  I am on page titled "DJP Connect | Login"
 	Then  I enter "wahyu.agungsugimartanto" as userId and "Pajak123" as Password
 	Then  I press Login Button
 	When  I am on page titled "Home"
@@ -26,6 +25,14 @@ Scenario: Balance Transfer Request
 	When  I am on page titled "Payment"
 	Then  I click on Create New Balance Transfer Request menu
 	Then  I enter new request "CL009871" on  New Balance Transfer Request Details Form
+	Given I move to CtasCore at @"https://ctas-mtra.intranet.pajak.go.id/home/en-US/"
+	Then  I enter "wahyu.agungsugimartanto" as userId and "Pajak123" as Password
+	Then  I press Login Button
+	When  I am on page titled "Home"
+	Then  I click on Core Home Menu label "Payment"
+	Then  I click on Core Home SubMenu label "Balance Transfer Request"
+	When  I am on page titled "Payment"
+	And   I will check on Balance Transfer Request success
 
 
 	

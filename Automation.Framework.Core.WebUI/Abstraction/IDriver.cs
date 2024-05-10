@@ -30,8 +30,12 @@ namespace Automation.Framework.Core.WebUI.Abstraction
         string GetAlertMessage();
         bool IsAlertPresent();
 
+        void CloseAllTabs();
+
         void ShowAlertMessage(string strNsg);
         Actions GetBuilderActions();
+
+
 
     }
 }

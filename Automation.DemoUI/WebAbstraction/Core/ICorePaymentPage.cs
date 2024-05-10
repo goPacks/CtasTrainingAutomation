@@ -21,5 +21,8 @@ namespace Automation.DemoUI.WebAbstraction.Core
 
 
         void EnterRequestNumber(string requestNumber);
+
+
+        void BalanceTransferRequestSuccess();
     }
 }

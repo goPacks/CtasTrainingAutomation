@@ -24,6 +24,9 @@ namespace Automation.DemoUI.Steps.Core
         [Given(@"I navigate to CtasCore at @""([^""]*)""")]
         public void GivenINavigateToCtasCoreAt(string URL)
         {
+
+            _iLoginCorePage.CloseAllTabs(); 
+
             _iLoginCorePage.NavigateTo(URL);
         }
 
@@ -43,6 +46,12 @@ namespace Automation.DemoUI.Steps.Core
         public void ThenIPressLoginButton()
         {
             _iLoginCorePage.ClickLogin();
+        }
+
+        [Given(@"I move to CtasCore at @""([^""]*)""")]
+        public void GivenIMoveToCtasCoreAt(string URL)
+        {
+            _iLoginCorePage.NavigateTo(URL);
         }
 
 
