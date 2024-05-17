@@ -27,6 +27,11 @@ namespace Automation.DemoUI.Steps.Portal
         }
 
 
+        [Then(@"I will perform CcreationOfBillingcodeFromTaxReturnPortal wth TIN = ""([^""]*)"" on Portal Withholding page")]
+        public void ThenIWillPerformCcreationOfBillingcodeFromTaxReturnPortalWthTINOnPortalWithholdingPage(string tin)
+        {
+            _iPage.CreationOfBillingCodeFromTaxReturnPortal(tin);
+        }
 
     }
 }

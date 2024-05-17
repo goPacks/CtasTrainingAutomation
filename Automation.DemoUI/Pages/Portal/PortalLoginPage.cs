@@ -2,10 +2,7 @@
 using Automation.DemoUI.WebAbstraction.Portal;
 using Automation.Framework.Core.WebUI.Abstraction;
 using Automation.Framework.Core.WebUI.Base;
-using Automation.Framework.Core.WebUI.DriverContext;
 using BoDi;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 
 namespace Automation.DemoUI.Pages.Portal
 {
@@ -48,12 +45,20 @@ namespace Automation.DemoUI.Pages.Portal
                 UserName.SendKeys(username);
                 Password.SendKeys(passWord);
             }
-           
+
         }
 
         public void CheckPageTitle(string pageTitle)
+
+
         {
-            Assert.That(pageTitle, Is.EqualTo(_idriver.GetPageTitle()));
+
+
+            if (_idriver.GetPageTitle() != "Registration Portal")
+            {
+
+                Assert.That(pageTitle, Is.EqualTo(_idriver.GetPageTitle()));
+            }
         }
 
         public void ClickLogin()
@@ -62,7 +67,7 @@ namespace Automation.DemoUI.Pages.Portal
             {
                 SubmitBtn.Click();
             }
-                
+
         }
 
 

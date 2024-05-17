@@ -193,14 +193,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3.Automatic Balance Transfer from Tax Return")]
-        [NUnit.Framework.CategoryAttribute("PaymentPortal")]
-        public void _3_AutomaticBalanceTransferFromTaxReturn()
+        [NUnit.Framework.DescriptionAttribute("3. Balance Transfer Reallocation Request Monitoring")]
+        [NUnit.Framework.CategoryAttribute("PaymentCore")]
+        public void _3_BalanceTransferReallocationRequestMonitoring()
         {
             string[] tagsOfScenario = new string[] {
-                    "PaymentPortal"};
+                    "PaymentCore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3.Automatic Balance Transfer from Tax Return", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3. Balance Transfer Reallocation Request Monitoring", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 38
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -212,44 +212,38 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 39
- testRunner.Given("I navigate to TpPortal at @\"https://tpportal-mtra.intranet.pajak.go.id\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to CtasCore at @\"https://ctas-mtra.intranet.pajak.go.id/home/en-US/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 40
- testRunner.Then("I will enter \"1091031210910452\" as TIN and \"VOTAqg2zRCX5hQxK\" as Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I enter \"wahyu.agungsugimartanto\" as userId and \"Pajak123\" as Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 41
- testRunner.And("I will click on Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 42
- testRunner.When("I am on page titled \"Registration Portal\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I am on page titled \"Home\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 43
- testRunner.When("I click on Portal Home Menu label \"eBUPOT (Withholding Slips)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("I click on Core Home Menu label \"Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 44
- testRunner.When("I click on Portal Home SubMenu label \"BPU\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 45
- testRunner.When("I am on page titled \"WithholdingPortal\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 46
- testRunner.Then("I will perform eBupot BPU wth TIN = \"1091031210910452\" on Portal Withholding page" +
-                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I click on Core Home SubMenu label \"Balance Transfer Reallocation Request Monitor" +
+                        "ing\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add Credit for Balance Transfer Request")]
-        [NUnit.Framework.CategoryAttribute("PaymentCoreTemporary")]
-        public void AddCreditForBalanceTransferRequest()
+        [NUnit.Framework.DescriptionAttribute("4.Creation of billing code from Tax Return (portal)")]
+        [NUnit.Framework.CategoryAttribute("PaymentPortal")]
+        public void _4_CreationOfBillingCodeFromTaxReturnPortal()
         {
             string[] tagsOfScenario = new string[] {
-                    "PaymentCoreTemporary"};
+                    "PaymentPortal"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Credit for Balance Transfer Request", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 49
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4.Creation of billing code from Tax Return (portal)", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 48
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -259,92 +253,42 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 49
+ testRunner.Given("I navigate to TpPortal at @\"https://tpportal-mtra.intranet.pajak.go.id\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 50
- testRunner.Given("I navigate to CtasCore at @\"https://ctas-mtra.intranet.pajak.go.id/home/en-US/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Then("I will enter \"1091031210910452\" as TIN and \"VOTAqg2zRCX5hQxK\" as Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 51
- testRunner.Then("I enter \"admin\" as userId and \"Pajak123\" as Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I will click on Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 52
- testRunner.Then("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I am on page titled \"Registration Portal\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 53
- testRunner.When("I am on page titled \"Home\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click on Portal Home Menu label \"eBUPOT (Withholding Slips)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 54
- testRunner.Then("I click on Core Home Menu label \"Payment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I click on Portal Home SubMenu label \"BPU\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 55
- testRunner.Then("I click on Core Home SubMenu label \"Manual Creation of Payments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 56
- testRunner.When("I am on page titled \"Payment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 57
- testRunner.Then("I will perform Manual Creation of Payment with TIN = \"1091031210910452\" on Core P" +
-                        "ayment page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I will perform CcreationOfBillingcodeFromTaxReturnPortal wth TIN = \"1091031210910" +
+                        "452\" on Portal Withholding page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Self Service Billing Code Creation")]
+        [NUnit.Framework.DescriptionAttribute("5.Monitoring for Overpayment and Interest Compensation")]
         [NUnit.Framework.CategoryAttribute("PaymentCore")]
-        public void SelfServiceBillingCodeCreation()
+        public void _5_MonitoringForOverpaymentAndInterestCompensation()
         {
             string[] tagsOfScenario = new string[] {
                     "PaymentCore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Self Service Billing Code Creation", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 65
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 66
- testRunner.Given("I navigate to CtasCore at @\"https://ctas-mtra.intranet.pajak.go.id/home/en-US/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 67
- testRunner.Then("I enter \"wahyu.agungsugimartanto\" as userId and \"Pajak123\" as Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 68
- testRunner.Then("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 69
- testRunner.When("I am on page titled \"Home\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 70
- testRunner.Then("I click on Core Home Menu label \"Payment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 71
- testRunner.Then("I click on Core Home SubMenu label \"Self-Service Billing Code Creation\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 72
- testRunner.When("I am on page titled \"Payment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 73
- testRunner.Then("I will perform Self Service Billing with \"0729150458413000\" on Core Payment page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Monitoring for Overpayment and Interest Compensation")]
-        [NUnit.Framework.CategoryAttribute("PaymentCore")]
-        public void MonitoringForOverpaymentAndInterestCompensation()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "PaymentCore"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Monitoring for Overpayment and Interest Compensation", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 76
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5.Monitoring for Overpayment and Interest Compensation", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 58
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -354,22 +298,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 77
+#line 59
  testRunner.Given("I navigate to CtasCore at @\"https://ctas-mtra.intranet.pajak.go.id/home/en-US/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 78
+#line 60
  testRunner.Then("I enter \"wahyu.agungsugimartanto\" as userId and \"Pajak123\" as Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 79
+#line 61
  testRunner.Then("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 80
+#line 62
  testRunner.When("I am on page titled \"Home\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 81
+#line 63
  testRunner.Then("I click on Core Home Menu label \"Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 82
+#line 64
  testRunner.Then("I click on Core Home SubMenu label \"Monitoring for Overpayment and Interest Compe" +
                         "nsation\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -378,15 +322,15 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Monitoring for Payment Data")]
+        [NUnit.Framework.DescriptionAttribute("6.Monitoring for Payment Data")]
         [NUnit.Framework.CategoryAttribute("PaymentCore")]
-        public void MonitoringForPaymentData()
+        public void _6_MonitoringForPaymentData()
         {
             string[] tagsOfScenario = new string[] {
                     "PaymentCore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Monitoring for Payment Data", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 86
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6.Monitoring for Payment Data", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 68
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -396,22 +340,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 87
+#line 69
  testRunner.Given("I navigate to CtasCore at @\"https://ctas-mtra.intranet.pajak.go.id/home/en-US/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 88
+#line 70
  testRunner.Then("I enter \"wahyu.agungsugimartanto\" as userId and \"Pajak123\" as Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 89
+#line 71
  testRunner.Then("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 90
+#line 72
  testRunner.When("I am on page titled \"Home\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 91
+#line 73
  testRunner.Then("I click on Core Home Menu label \"Reports\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 92
+#line 74
  testRunner.Then("I click on Core Home SubMenu label \"Monitoring for Payment Data\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

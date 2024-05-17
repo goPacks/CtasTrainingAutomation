@@ -78,6 +78,40 @@ namespace Automation.DemoUI.Pages.Portal
           
         }
 
+        public void CreationOfBillingCodeFromTaxReturnPortal(string tin)
+        {
+
+            Thread.Sleep(3000);
+
+            btnCreateEBU.Click();
+
+            Thread.Sleep(3000);
+
+            taxPeriodBox.Click();
+
+            Thread.Sleep(1000);
+
+            taxPeriodPick.Click();
+
+            Thread.Sleep(1000);
+
+            TIN.Click();
+
+
+            //Thread.Sleep(1000);      Thread.Sleep(1000);
+            TIN.SendKeys(tin);
+
+            //Thread.Sleep(1000);
+
+            //x1.Click();
+
+            //Thread.Sleep(1000);
+
+            //x2.Click();
+
+        }
+
+
     }
 }
 

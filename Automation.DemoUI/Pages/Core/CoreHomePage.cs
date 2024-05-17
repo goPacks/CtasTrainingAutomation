@@ -42,7 +42,9 @@ namespace Automation.DemoUI.Pages.Core
 
         IAtWebElement subRptPayment => _idriver.FindElement(GetBy(LocatorType.Xpath, "//ui-shared-header/nav[2]/ul[1]/li[20]/ul[1]/li[14]/a[1]"));
 
+        IAtWebElement BalanceTransferReallocationRequestMonitoring  => _idriver.FindElement(GetBy(LocatorType.LinkText, "Balance Transfer Reallocation Request Monitoring"));
 
+        IAtWebElement x1 => _idriver.FindElement(GetBy(LocatorType.Id, "3000"));
 
 
         //xpath=//a[contains(text(),'Monitoring for Overpayment and Interest Compensation')]
@@ -97,10 +99,19 @@ namespace Automation.DemoUI.Pages.Core
                     break;
                 case "Monitoring for Payment Data":
                     subRptPayment.MouseHover();
-                    Thread.Sleep(3000);
+                    Thread.Sleep(1000);
+                    MonitoringForPaymentData.MouseHover();
+                    Thread.Sleep(1000);
                     MonitoringForPaymentData.Click();
                     break;
 
+                case "Balance Transfer Reallocation Request Monitoring":
+                    subRptPayment.MouseHover();
+                    Thread.Sleep(1000);
+                    BalanceTransferReallocationRequestMonitoring.MouseHover();
+                    Thread.Sleep(1000);
+                    BalanceTransferReallocationRequestMonitoring.Click();
+                    break;
 
                 default:
                     break;

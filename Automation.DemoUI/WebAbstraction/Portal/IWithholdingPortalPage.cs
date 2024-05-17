@@ -13,5 +13,9 @@ namespace Automation.DemoUI.WebAbstraction.Portal
 
         public void CreateEBUPOTBPU(string tin);
 
+        public void CreationOfBillingCodeFromTaxReturnPortal(string tin);
+
+        
+
     }
 }
