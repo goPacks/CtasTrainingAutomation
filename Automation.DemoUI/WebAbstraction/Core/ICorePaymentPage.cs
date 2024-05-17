@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,9 +21,12 @@ namespace Automation.DemoUI.WebAbstraction.Core
         void SelfServiceBillingCodeCreation(string objectPermitNumber);
 
 
-        void EnterRequestNumber(string requestNumber);
+        void CheckBalanceTransferRequest();
 
+        void SubmitBalanceTransferRequest(string requestNumber, string NPWP);
 
-        void BalanceTransferRequestSuccess();
+        void ManualCreationOfPayment(string TINNumber);
+
+        //void MonitoringforOverpaymentandInterestCompensation();
     }
 }

@@ -19,16 +19,16 @@ namespace Automation.DemoUI.Steps.Portal
             _iPaymentPortalPage = iPaymentPortalPage;
         }
 
-        [Then(@"I will AutoTransfer")]
-        public void ThenIWillAutoTransfer()
-        {
-            _iPaymentPortalPage.AutoBalTransferTaxArrear();
-        }
+        //[Then(@"I will AutoTransfer")]
+        //public void ThenIWillAutoTransfer()
+        //{
+        //    _iPaymentPortalPage.AutoBalTransferTaxArrear();
+        //}
 
         [Then(@"I will AutoTransfer on Portal Payment Page")]
         public void ThenIWillAutoTransferOnPortalPaymentPage()
         {
-            _iPaymentPortalPage.AutoBalTransferTaxArrear();
+            _iPaymentPortalPage.AutoBalTransferFromTaxArrears();
         }
 
 
@@ -38,6 +38,11 @@ namespace Automation.DemoUI.Steps.Portal
         //    _iPaymentPortalPage.AutoBalTransferTaxArrears();
         //}
 
+        [Then(@"I will AutoBalTransferFromTaxArrears on Portal Payment Page")]
+        public void ThenIWillAutoBalTransferFromTaxArrearsOnPortalPaymentPage()
+        {
+            _iPaymentPortalPage.AutoBalTransferFromTaxArrears();
+        }
 
 
     }

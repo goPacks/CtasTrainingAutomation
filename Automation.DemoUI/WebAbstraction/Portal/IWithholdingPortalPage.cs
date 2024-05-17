@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Automation.DemoUI.WebAbstraction.Portal
 {
-    public interface IPortalPaymentPage
+    public interface IWithholdingPortalPage
     {
 
+      
 
+        public void CreateEBUPOTBPU(string tin);
 
-        public void AutoBalTransferFromTaxArrears();
     }
 }

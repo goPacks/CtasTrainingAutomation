@@ -26,7 +26,7 @@ namespace Automation.DemoUI.Container
             iobjectContainer.RegisterTypeAs<CoreHomePage, ICoreHomePage>();
             iobjectContainer.RegisterTypeAs<CorePaymentPage, ICorePaymentPage>();
             iobjectContainer.RegisterTypeAs<PortalPaymentPage, IPortalPaymentPage>();
-
+            iobjectContainer.RegisterTypeAs<WithholdingPortalPage, IWithholdingPortalPage>();
             iobjectContainer.RegisterTypeAs<AtConfiguration, IAtConfiguration>();
 
             

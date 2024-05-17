@@ -43,8 +43,12 @@ namespace Automation.DemoUI.Pages.Portal
 
         public void EnterCredentials(string username, string passWord)
         {
-            UserName.SendKeys(username);
-            Password.SendKeys(passWord);
+            if (_idriver.GetPageTitle() != "Registration Portal")
+            {
+                UserName.SendKeys(username);
+                Password.SendKeys(passWord);
+            }
+           
         }
 
         public void CheckPageTitle(string pageTitle)
@@ -54,7 +58,11 @@ namespace Automation.DemoUI.Pages.Portal
 
         public void ClickLogin()
         {
-            SubmitBtn.Click();
+            if (_idriver.GetPageTitle() != "Registration Portal")
+            {
+                SubmitBtn.Click();
+            }
+                
         }
 
 

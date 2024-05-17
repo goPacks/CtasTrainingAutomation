@@ -23,11 +23,13 @@ namespace Automation.DemoUI.Steps.Core
             _iPage.ClickOnSideMenu("Create New Balance Transfer Request");
         }
 
-        [Then(@"I enter new request ""([^""]*)"" on  New Balance Transfer Request Details Form")]
-        public void ThenIEnterNewRequestOnNewBalanceTransferRequestDetailsForm(string requestNumber)
-        {
-            _iPage.EnterRequestNumber(requestNumber);
-        }
+        //[Then(@"I enter new request ""([^""]*)"" on  New Balance Transfer Request Details Form")]
+        //public void ThenIEnterNewRequestOnNewBalanceTransferRequestDetailsForm(string requestNumber)
+        //{
+        //    _iPage.EnterRequestNumber(requestNumber);
+        //}
+
+
 
         [Then(@"I will enter Tax Object Number ""([^""]*)"" in core payment page")]
         public void ThenIWillEnterTaxObjectNumberInCorePaymentPage(string objectPermitNumber)
@@ -46,9 +48,24 @@ namespace Automation.DemoUI.Steps.Core
         [When(@"I will check on Balance Transfer Request success")]
         public void WhenIWillCheckOnBalanceTransferRequestSuccess()
         {
-            _iPage.BalanceTransferRequestSuccess();
+            _iPage.CheckBalanceTransferRequest();
         }
 
+        [Then(@"I enter New Request = ""([^""]*)"" and NPWP = ""([^""]*)"" on  New Balance Transfer Request Details Form")]
+        public void ThenIEnterNewRequestAndNPWPOnNewBalanceTransferRequestDetailsForm(string requestNumber, string NPWP)
+        {
+
+            _iPage.SubmitBalanceTransferRequest(requestNumber, NPWP);
+        }
+
+        [Then(@"I will perform Manual Creation of Payments with TIN = ""([^""]*)"" on Core Payment page")]
+        
+
+        [Then(@"I will perform Manual Creation of Payment with TIN = ""([^""]*)"" on Core Payment page")]
+        public void ThenIWillPerformManualCreationOfPaymentWithTINOnCorePaymentPage(string TIN)
+        {
+            _iPage.ManualCreationOfPayment(TIN);
+        }
 
 
     }

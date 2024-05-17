@@ -27,7 +27,7 @@ namespace Automation.DemoUI.Pages.Portal
             _idriver = idriver;
         }
 
-        public void AutoBalTransferTaxArrear()
+        public void AutoBalTransferFromTaxArrears()
         {
 
             x1.Click();

@@ -22,12 +22,14 @@ namespace Automation.DemoUI.Steps.Core
         [Then(@"I click on Core Home Menu label ""([^""]*)""")]
         public void ThenIClickOnCoreHomeMenuLabel(string menu)
         {
+            Thread.Sleep(2000);
             _iPage.ClickMenu(menu);
         }
 
         [Then(@"I click on Core Home SubMenu label ""([^""]*)""")]
         public void ThenIClickOnCoreHomeSubMenuLabel(string subMenu)
         {
+            Thread.Sleep(2000);
             _iPage.ClickSubMenu(subMenu);
         }
 

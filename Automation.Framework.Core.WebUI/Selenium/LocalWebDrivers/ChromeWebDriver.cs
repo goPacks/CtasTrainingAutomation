@@ -28,8 +28,10 @@ namespace Automation.Framework.Core.WebUI.Selenium.LocalWebDrivers
          //   iwebdriver.Manage().Window.Maximize();
             return iwebdriver;
 
-           // To run on already opoened browser
-           // chrome.exe--remote - debugging - port = 9222--user - data - dir = "C:\data\project\ChromeProfile"
+            // To run on already opoened browser
+            // "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9999 --user-data-dir="C:\data\project\ChromeProfile"
+            // "C:\selenium\chrome\chrome-win64\chrome.exe" --remote-debugging-port=9999 --user-data-dir="C:\data\project\ChromeProfile"
+
         }
         public ChromeOptions GetOptions()
         {

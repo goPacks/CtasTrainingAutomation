@@ -28,7 +28,9 @@ namespace Automation.DemoUI.Pages.Portal
 
         IAtWebElement taxArrears => _idriver.FindElement(GetBy(LocatorType.LinkText, "Tax Arrears Billing Code"));
 
+        IAtWebElement eBUPPOT => _idriver.FindElement(GetBy(LocatorType.LinkText, "eBUPOT (Withholding Slips)"));
 
+        IAtWebElement BPU => _idriver.FindElement(GetBy(LocatorType.LinkText, "BPU"));
 
 
         public PortalHomePage(IObjectContainer iobjectContainer, IAtConfiguration iatConfiguration, IDriver idriver)
@@ -56,11 +58,11 @@ namespace Automation.DemoUI.Pages.Portal
 
                 case "Tax Arrears Billing Code":
                     taxArrears.Click();
-
-
                     break;
 
-
+                case "eBUPOT (Withholding Slips)":
+                    eBUPPOT.Click(); 
+                    break;  
 
                 default:
                     break;
@@ -79,7 +81,9 @@ namespace Automation.DemoUI.Pages.Portal
                     taxArrears.Click();
                     break;
 
-
+                case "BPU":
+                    BPU.Click();
+                    break;
 
                 default:
                     break;

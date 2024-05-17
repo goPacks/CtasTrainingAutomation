@@ -3,19 +3,18 @@
 A short summary of the feature
 
 @PaymentPortal
-Scenario: Automatic Balance Transfer from Tax Arrears
+Scenario: 1.Automatic Balance Transfer from Tax Arrears
 	Given I navigate to TpPortal at @"https://tpportal-mtra.intranet.pajak.go.id"
-	When  I am on page titled "CATS"
 	Then  I will enter "1091031210910452" as TIN and "VOTAqg2zRCX5hQxK" as Password
 	And   I will click on Login Button
-	When  I am on page titled "Home"
+	When  I am on page titled "Registration Portal"
 	When  I click on Portal Home Menu label "Payment" 
 	When  I click on Portal Home SubMenu label "Tax Arrears Billing Code"
-	Then  I will AutoTransfer on Portal Payment Page
+	Then  I will AutoBalTransferFromTaxArrears on Portal Payment Page
 
 	
 @PaymentCore
-Scenario: Balance Transfer Request
+Scenario: 2.Automatic Balance Transfer from Tax Return
 	Given I navigate to CtasCore at @"https://ctas-mtra.intranet.pajak.go.id/home/en-US/"
 	Then  I enter "wahyu.agungsugimartanto" as userId and "Pajak123" as Password
 	Then  I press Login Button
@@ -24,7 +23,7 @@ Scenario: Balance Transfer Request
 	Then  I click on Core Home SubMenu label "Balance Transfer Request"
 	When  I am on page titled "Payment"
 	Then  I click on Create New Balance Transfer Request menu
-	Then  I enter new request "CL009871" on  New Balance Transfer Request Details Form
+	Then  I enter New Request = "CL009871" and NPWP = "1091031210910452" on  New Balance Transfer Request Details Form
 	Given I move to CtasCore at @"https://ctas-mtra.intranet.pajak.go.id/home/en-US/"
 	Then  I enter "wahyu.agungsugimartanto" as userId and "Pajak123" as Password
 	Then  I press Login Button
@@ -35,15 +34,60 @@ Scenario: Balance Transfer Request
 	And   I will check on Balance Transfer Request success
 
 
+	@PaymentPortal
+Scenario: 3.Automatic Balance Transfer from Tax Return
+	Given I navigate to TpPortal at @"https://tpportal-mtra.intranet.pajak.go.id"
+	Then  I will enter "1091031210910452" as TIN and "VOTAqg2zRCX5hQxK" as Password
+	And   I will click on Login Button
+	When  I am on page titled "Registration Portal"
+	When  I click on Portal Home Menu label "eBUPOT (Withholding Slips)" 
+	When  I click on Portal Home SubMenu label "BPU"
+	When  I am on page titled "WithholdingPortal"
+	Then  I will perform eBupot BPU wth TIN = "1091031210910452" on Portal Withholding page
+
+@PaymentCoreTemporary
+Scenario: Add Credit for Balance Transfer Request
+	Given I navigate to CtasCore at @"https://ctas-mtra.intranet.pajak.go.id/home/en-US/"
+	Then  I enter "admin" as userId and "Pajak123" as Password
+	Then  I press Login Button
+	When  I am on page titled "Home"
+	Then  I click on Core Home Menu label "Payment"
+	Then  I click on Core Home SubMenu label "Manual Creation of Payments"
+	When  I am on page titled "Payment"
+	Then  I will perform Manual Creation of Payment with TIN = "1091031210910452" on Core Payment page  
 	
+
+
+
+
+
 @PaymentCore
     Scenario:Self Service Billing Code Creation
 	Given I navigate to CtasCore at @"https://ctas-mtra.intranet.pajak.go.id/home/en-US/"
-	When  I am on page titled "DJP Connect | Login"
 	Then  I enter "wahyu.agungsugimartanto" as userId and "Pajak123" as Password
-	And   I press Login Button
+	Then  I press Login Button
 	When  I am on page titled "Home"
 	Then  I click on Core Home Menu label "Payment"
 	Then  I click on Core Home SubMenu label "Self-Service Billing Code Creation"
 	When  I am on page titled "Payment"
 	Then  I will perform Self Service Billing with "0729150458413000" on Core Payment page  
+
+@PaymentCore
+	Scenario: Monitoring for Overpayment and Interest Compensation
+	Given I navigate to CtasCore at @"https://ctas-mtra.intranet.pajak.go.id/home/en-US/"
+	Then  I enter "wahyu.agungsugimartanto" as userId and "Pajak123" as Password
+	Then  I press Login Button
+	When  I am on page titled "Home"
+	Then  I click on Core Home Menu label "Reports"
+	Then  I click on Core Home SubMenu label "Monitoring for Overpayment and Interest Compensation"
+
+
+@PaymentCore
+	Scenario: Monitoring for Payment Data
+	Given I navigate to CtasCore at @"https://ctas-mtra.intranet.pajak.go.id/home/en-US/"
+	Then  I enter "wahyu.agungsugimartanto" as userId and "Pajak123" as Password
+	Then  I press Login Button
+	When  I am on page titled "Home"
+	Then  I click on Core Home Menu label "Reports"
+	Then  I click on Core Home SubMenu label "Monitoring for Payment Data"
+
