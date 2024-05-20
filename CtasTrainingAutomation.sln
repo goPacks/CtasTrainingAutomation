@@ -12,6 +12,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Automation.DemoUI.Test", "A
 		{0EC05EC5-B9E8-4E35-B856-3662CADABFB9} = {0EC05EC5-B9E8-4E35-B856-3662CADABFB9}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRunner", "TestRunner\TestRunner.csproj", "{44515965-84A6-4199-8EFF-353EE4D5C13E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{75EFBC0B-5064-4847-B449-100DC58F1A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75EFBC0B-5064-4847-B449-100DC58F1A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75EFBC0B-5064-4847-B449-100DC58F1A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44515965-84A6-4199-8EFF-353EE4D5C13E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44515965-84A6-4199-8EFF-353EE4D5C13E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44515965-84A6-4199-8EFF-353EE4D5C13E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44515965-84A6-4199-8EFF-353EE4D5C13E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

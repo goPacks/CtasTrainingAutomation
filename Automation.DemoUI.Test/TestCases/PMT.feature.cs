@@ -75,11 +75,11 @@ namespace Automation.DemoUI.Test.TestCases
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1.Automatic Balance Transfer from Tax Arrears")]
-        [NUnit.Framework.CategoryAttribute("PaymentPortal")]
+        [NUnit.Framework.CategoryAttribute("PaymentPortal1")]
         public void _1_AutomaticBalanceTransferFromTaxArrears()
         {
             string[] tagsOfScenario = new string[] {
-                    "PaymentPortal"};
+                    "PaymentPortal1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1.Automatic Balance Transfer from Tax Arrears", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6

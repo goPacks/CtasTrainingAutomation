@@ -1,8 +1,8 @@
 ﻿Feature: PMT
 
-A short summary of the feature
+dotnet test --filter Category=PaymentPortal1
 
-@PaymentPortal
+@PaymentPortal1
 Scenario: 1.Automatic Balance Transfer from Tax Arrears
 	Given I navigate to TpPortal at @"https://tpportal-mtra.intranet.pajak.go.id"
 	Then  I will enter "1091031210910452" as TIN and "VOTAqg2zRCX5hQxK" as Password
