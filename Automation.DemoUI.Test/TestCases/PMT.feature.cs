@@ -361,6 +361,54 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Add Credit for Balance Transfer Request")]
+        [NUnit.Framework.CategoryAttribute("PaymentCoreTemporary")]
+        public void AddCreditForBalanceTransferRequest()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "PaymentCoreTemporary"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Credit for Balance Transfer Request", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 106
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 107
+ testRunner.Given("I navigate to CtasCore at @\"https://ctas-mtra.intranet.pajak.go.id/home/en-US/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 108
+ testRunner.Then("I enter \"admin\" as userId and \"Pajak123\" as Password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 109
+ testRunner.Then("I press Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 110
+ testRunner.When("I am on page titled \"Home\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 111
+ testRunner.Then("I click on Core Home Menu label \"Payment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 112
+ testRunner.Then("I click on Core Home SubMenu label \"Manual Creation of Payments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 113
+ testRunner.When("I am on page titled \"Payment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 114
+ testRunner.Then("I will perform Manual Creation of Payment with TIN = \"1091031210910452\" on Core P" +
+                        "ayment page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

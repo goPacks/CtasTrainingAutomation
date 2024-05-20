@@ -102,14 +102,14 @@ Scenario: 4.Creation of billing code from Tax Return (portal)
 #
 #
 #	
-#@PaymentCoreTemporary
-#Scenario: Add Credit for Balance Transfer Request
-#	Given I navigate to CtasCore at @"https://ctas-mtra.intranet.pajak.go.id/home/en-US/"
-#	Then  I enter "admin" as userId and "Pajak123" as Password
-#	Then  I press Login Button
-#	When  I am on page titled "Home"
-#	Then  I click on Core Home Menu label "Payment"
-#	Then  I click on Core Home SubMenu label "Manual Creation of Payments"
-#	When  I am on page titled "Payment"
-#	Then  I will perform Manual Creation of Payment with TIN = "1091031210910452" on Core Payment page  
+@PaymentCoreTemporary
+Scenario: Add Credit for Balance Transfer Request
+	Given I navigate to CtasCore at @"https://ctas-mtra.intranet.pajak.go.id/home/en-US/"
+	Then  I enter "admin" as userId and "Pajak123" as Password
+	Then  I press Login Button
+	When  I am on page titled "Home"
+	Then  I click on Core Home Menu label "Payment"
+	Then  I click on Core Home SubMenu label "Manual Creation of Payments"
+	When  I am on page titled "Payment"
+	Then  I will perform Manual Creation of Payment with TIN = "1091031210910452" on Core Payment page  
 #	

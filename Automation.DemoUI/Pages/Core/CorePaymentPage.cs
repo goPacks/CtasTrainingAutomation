@@ -145,7 +145,13 @@ namespace Automation.DemoUI.Pages.Core
 
         IAtWebElement TIN => _idriver.FindElement(GetBy(LocatorType.CssSelector, "td > .ng-dirty"));
         IAtWebElement tblManualPay => _idriver.FindElement(GetBy(LocatorType.Id, "pr_id_4-table"));
-       
+
+
+        string css = "ui-coretax-one-column-layout.ng-star-inserted:nth-child(3) div.container-fluid div.row.main-content-container div.col-md-12.main-content pmnt-manual-payment-creation.ng-star-inserted:nth-child(2) form.ng-pristine.ng-invalid.ng-touched div.ng-pristine.ng-invalid.ng-touched p-table.p-element div.p-datatable-sm.p-datatable-gridlines.p-datatable-striped.p-datatable-responsiveness.p-datatable.p-component div.p-datatable-wrapper table.p-datatable-table.ng-star-inserted tbody.p-element.p-datatable-tbody tr.ng-pristine.ng-invalid.ng-star-inserted.ng-touched td:nth-child(3) > input.form-control.form-control-sm.ng-pristine.ng-invalid.is-invalid.ng-touched:nth-child(1)";
+
+                    IAtWebElement xxxx=> _idriver.FindElement(GetBy(LocatorType.CssSelector, css));
+
+
         //driver.FindElement(By.CssSelector("td > .ng-dirty")).SendKeys("1091031210910452");
         //driver.FindElement(By.CssSelector(".col-md-12")).Click();
 
@@ -228,14 +234,19 @@ namespace Automation.DemoUI.Pages.Core
 
             //  TIN.SendKeys(TINNumber);
 
-            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> allRows = tblManualPay.GetElement().FindElements(By.TagName("tr"));
+            //System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> allRows = tblManualPay.GetElement().FindElements(By.TagName("tr"));
 
 
-            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> allCols = allRows[1].FindElements(By.TagName("td"));
+            //System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> allCols = allRows[1].FindElements(By.TagName("td"));
 
-           // allCols[2].SendKeys(TINNumber);
+            // allCols[2].SendKeys(TINNumber);
 
-          //  allCols[2].Text = TINNumber;    
+
+
+            //  allCols[2].Text = TINNumber;    
+
+            xxxx.SendKeys(TINNumber);
+
 
         }
 
